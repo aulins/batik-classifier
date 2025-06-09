@@ -26,11 +26,10 @@ def index():
             file.save(filepath)
 
             # Preprocessing
-            img = load_img(filepath, target_size=(224, 224), color_mode='grayscale')
-            img = img_to_array(img)
-            img = np.repeat(img[..., np.newaxis], 3, axis=-1)  # greyscale ke 3 channel
+            img = load_img(filepath, target_size=(224, 224))  # Jangan grayscale
+            img = img_to_array(img)                           # (224, 224, 3)
             img = img / 255.0
-            img = np.expand_dims(img, axis=0)
+            img = np.expand_dims(img, axis=0)                 # (1, 224, 224, 3)
 
             # Prediksi
             pred_probs = model.predict(img)

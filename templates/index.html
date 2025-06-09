@@ -1,21 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
     <head>
         <meta charset="UTF-8" />
-        <title>Deteksi Motif Batik</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Klasifikasi Motif Batik</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     </head>
     <body>
-        <h2>Upload Citra Batik</h2>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="image" />
-            <button type="submit">Klasifikasikan</button>
-        </form>
+        <header>
+            <div class="hero">
+                <h1>Sistem Klasifikasi Citra Motif Batik</h1>
+                <p>Menggunakan CNN MobileNetV2</p>
+            </div>
+        </header>
 
-        {% if filename %}
-        <h3>Hasil:</h3>
-        <img src="{{ url_for('uploaded_file', filename=filename) }}" width="300" />
-        <p><strong>Kelas:</strong> {{ label }}</p>
-        <p><strong>Confidence:</strong> {{ '{:.2f}%'.format(confidence * 100) }}</p>
-        {% endif %}
+        <section class="about">
+            <div class="container">
+                <h2>Tentang Batik</h2>
+                <p>Batik merupakan warisan budaya Indonesia yang kaya akan nilai seni dan filosofi. Setiap motif mengandung makna mendalam dan berasal dari berbagai daerah di nusantara.</p>
+                <img src="{{ url_for('static', filename='batik_sample.jpg') }}" alt="Motif Batik" class="about-img" />
+            </div>
+        </section>
+
+        <section class="upload">
+            <div class="container">
+                <h2>Uji Motif Batik Anda</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="image" required />
+                    <button type="submit">Klasifikasikan</button>
+                </form>
+
+                {% if filename %}
+                <div class="result">
+                    <h3>Hasil Klasifikasi</h3>
+                    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Gambar Uji" class="uploaded-img" />
+                    <p><strong>Prediksi:</strong> {{ label }}</p>
+                    <p><strong>Akurasi:</strong> {{ '{:.2f}'.format(confidence * 100) }}%</p>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2>Kontak</h2>
+                <p>Email: info@batikclassify.id</p>
+                <p>Telepon: +62 812 3456 7890</p>
+                <p>Alamat: Universitas Gunadarma, Depok, Indonesia</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Sistem Klasifikasi Batik | by Mahasiswa Teknik Informatika</p>
+        </footer>
     </body>
 </html>

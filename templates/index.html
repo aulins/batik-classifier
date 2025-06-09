@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Deteksi Motif Batik</title>
+    </head>
+    <body>
+        <h2>Upload Citra Batik</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" />
+            <button type="submit">Klasifikasikan</button>
+        </form>
+
+        {% if filename %}
+        <h3>Hasil:</h3>
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" width="300" />
+        <p><strong>Kelas:</strong> {{ label }}</p>
+        <p><strong>Confidence:</strong> {{ '{:.2f}%'.format(confidence * 100) }}</p>
+        {% endif %}
+    </body>
+</html>

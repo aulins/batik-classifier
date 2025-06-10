@@ -3,28 +3,79 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Klasifikasi Motif Batik</title>
+        <title>KJ Batik Indonesia - Galeri Batik Tulis</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
+
     <body>
         <header>
-            <div class="hero">
-                <h1>Sistem Klasifikasi Citra Motif Batik</h1>
-                <p>Menggunakan CNN MobileNetV2</p>
+            <div class="container">
+                <div class="logo">
+                    <h1>KJ Batik Indonesia</h1>
+                </div>
+                <nav>
+                    <a href="#tentang">Tentang Kami</a>
+                    <a href="#koleksi">Koleksi Batik</a>
+                    <a href="#klasifikasi">Klasifikasi Batik</a>
+                    <a href="#kontak">Kontak</a>
+                </nav>
             </div>
         </header>
 
-        <section class="about">
+        <section id="hero">
             <div class="container">
-                <h2>Tentang Batik</h2>
-                <p>Batik merupakan warisan budaya Indonesia yang kaya akan nilai seni dan filosofi. Setiap motif mengandung makna mendalam dan berasal dari berbagai daerah di nusantara.</p>
-                <img src="{{ url_for('static', filename='batik_sample.jpg') }}" alt="Motif Batik" class="about-img" />
+                <div class="hero-content">
+                    <h2>Lestarikan Warisan Budaya Indonesia dengan Batik Tulis</h2>
+                    <p>Temukan keindahan dan keunikan motif batik tulis dari berbagai daerah di Indonesia.</p>
+                    <a href="#koleksi" class="cta-button">Lihat Koleksi</a>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='images/hero-image.jpeg') }}" alt="Koleksi Batik" />
+                </div>
             </div>
         </section>
 
-        <section class="upload">
+        <section id="tentang">
             <div class="container">
-                <h2>Uji Motif Batik Anda</h2>
+                <h2>Tentang Kami</h2>
+                <div class="about-content">
+                    <video class="about-img" controls>
+                        <source src="{{ url_for('static', filename='videos/pembuatan_batik.mp4') }}" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>
+                        KJ Batik Indonesia adalah galeri yang berdedikasi untuk melestarikan dan mempromosikan batik tulis sebagai warisan budaya Indonesia. Kami menyediakan berbagai macam motif batik tulis berkualitas tinggi dari berbagai
+                        daerah di nusantara.
+                    </p>
+                    <p>Setiap kain batik memiliki cerita dan makna yang mendalam. Kami percaya bahwa dengan memahami nilai seni dan filosofi batik, kita dapat lebih menghargai kekayaan budaya bangsa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="koleksi">
+            <div class="container">
+                <h2>Koleksi Batik</h2>
+                <div class="gallery">
+                    <!-- Contoh gambar batik (ganti dengan gambar yang sesuai) -->
+                    <img src="{{ url_for('static', filename='images/batik1.jpeg') }}" alt="Batik 1" />
+                    <img src="{{ url_for('static', filename='images/batik2.jpeg') }}" alt="Batik 2" />
+                    <img src="{{ url_for('static', filename='images/batik3.jpeg') }}" alt="Batik 3" />
+                    <!-- Tambahkan gambar batik lainnya di sini -->
+                </div>
+            </div>
+        </section>
+
+        <section id="klasifikasi">
+            <div class="container">
+                <h2>Klasifikasi Motif Batik</h2>
+                <p>Unggah gambar motif batik untuk mengidentifikasi jenisnya menggunakan teknologi klasifikasi citra.</p>
                 <form method="POST" enctype="multipart/form-data">
                     <input type="file" name="image" required />
                     <button type="submit">Klasifikasikan</button>
@@ -41,17 +92,31 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section id="kontak">
             <div class="container">
-                <h2>Kontak</h2>
-                <p>Email: info@batikclassify.id</p>
-                <p>Telepon: +62 812 3456 7890</p>
-                <p>Alamat: Universitas Gunadarma, Depok, Indonesia</p>
+                <h2>Kontak Kami</h2>
+                <p>Kunjungi galeri kami atau hubungi kami melalui informasi berikut:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Email: info@kjbatikindonesia.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>Telepon: +62 812 3456 7890</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Jl. Ciledug Gg. Gn. Kasur no. 62 RT 03 RW 11, Garut 44112</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2025 Sistem Klasifikasi Batik | by Mahasiswa Teknik Informatika</p>
+            <div class="container">
+                <p>&copy; 2024 KJ Batik Indonesia | Dibuat dengan <i class="fas fa-heart"></i> oleh Kami</p>
+            </div>
         </footer>
     </body>
 </html>

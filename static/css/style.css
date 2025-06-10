@@ -1,120 +1,296 @@
 /* style.css */
 
-/* Reset & font */
+/* Reset & Font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Arial", sans-serif;
+    /* Ganti dengan font yang sesuai */
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: #f5f0e1;
+    /* Warna krem */
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
+/* Header */
 header {
-    background-color: #512b2b;
+    background-color: #774646;
+    /* Coklat tua */
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 1rem 0;
+    /* Mengurangi padding atas dan bawah */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-nav {
-    background-color: #774646;
-    text-align: center;
-    padding: 10px 0;
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    /* Ukuran font logo */
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 1rem;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #f5f0e1;
+    /* Warna krem saat hover */
 }
 
+/* Hero Section */
+#hero {
+    background-image: url("path/to/your/hero-image.jpg");
+    /* Ganti dengan gambar hero Anda */
+    background-size: cover;
+    background-position: center;
+    color: #000;
+    text-align: center;
+    padding: 10rem 0 0 0;
+    margin-top: 60px;
+    /* Tinggi header */
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    /* line-height: 1.8; */
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #512b2b;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3b1e1e;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 4rem;
+}
+
+/* General Styles */
 .container {
-    max-width: 960px;
+    max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 2rem;
 }
 
 section {
-    margin-bottom: 50px;
+    padding: 4rem 0;
 }
 
 h2 {
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: #512b2b;
-    border-bottom: 2px solid #d5b9b2;
-    padding-bottom: 5px;
+    border-bottom: 3px solid #d5b9b2;
+    padding-bottom: 0.5rem;
 }
 
-.gallery {
+/* About Section */
+#tentang .about-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#tentang p {
+    font-size: 1.1rem;
+}
+
+/* Gallery Section */
+#koleksi .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .gallery img {
     width: 100%;
-    max-width: 280px;
-    height: auto;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-form {
-    margin-top: 20px;
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
-input[type="file"] {
-    margin-top: 10px;
+/* Klasifikasi Section */
+#klasifikasi form {
+    margin-top: 1rem;
 }
 
-button {
+#klasifikasi input[type="file"] {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#klasifikasi button {
     background-color: #512b2b;
     color: #fff;
     border: none;
-    padding: 10px 18px;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+#klasifikasi button:hover {
     background-color: #3b1e1e;
 }
 
-.result {
-    margin-top: 20px;
+#klasifikasi .result {
+    margin-top: 2rem;
     background-color: #fff5eb;
-    padding: 15px;
+    padding: 1.5rem;
     border-left: 4px solid #512b2b;
     border-radius: 5px;
 }
 
-footer {
-    background-color: #512b2b;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
+#klasifikasi .result img {
+    max-width: 300px;
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-    nav a {
-        display: block;
-        margin: 8px 0;
-    }
+/* Contact Section */
+#kontak .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-    .gallery {
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-item i {
+    color: #512b2b;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #774646;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 4rem;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer i {
+    color: #e44d26;
+    /* Warna hati */
+    margin: 0 0.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .logo h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        margin-top: 0.5rem;
+    }
+
+    nav a {
+        margin: 0.5rem;
+        display: block;
+    }
+
+    #hero {
+        padding: 5rem 0;
+    }
+
+    #hero .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        margin-bottom: 1rem;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    #tentang .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        max-width: 100%;
+    }
+
+    #kontak .contact-info {
+        align-items: flex-start;
     }
 }

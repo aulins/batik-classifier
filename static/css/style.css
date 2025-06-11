@@ -18,8 +18,8 @@ body {
 
 /* Header */
 header {
-    background-color: #774646;
-    /* Coklat tua */
+    background-color: #2c1b1b;
+    /* Coklat tua KJ Batik */
     color: #fff;
     padding: 1rem 0;
     /* Mengurangi padding atas dan bawah */
@@ -39,6 +39,11 @@ header .container {
 .logo h1 {
     font-size: 1.5rem;
     /* Ukuran font logo */
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
 }
 
 nav a {

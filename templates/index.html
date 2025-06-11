@@ -63,7 +63,6 @@
             <div class="container">
                 <h2>Koleksi Batik</h2>
                 <div class="gallery">
-                    <!-- Contoh gambar batik (ganti dengan gambar yang sesuai) -->
                     <img src="{{ url_for('static', filename='images/batik1.jpeg') }}" alt="Batik 1" />
                     <img src="{{ url_for('static', filename='images/batik2.jpeg') }}" alt="Batik 2" />
                     <img src="{{ url_for('static', filename='images/batik3.jpeg') }}" alt="Batik 3" />
@@ -85,7 +84,7 @@
                 <div class="result">
                     <h3>Hasil Klasifikasi</h3>
                     <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Gambar Uji" class="uploaded-img" />
-                    <p><strong>Prediksi:</strong> {{ label }}</p>
+                    <p><strong>Prediksi:</strong> {{ label | capitalize }}</p>
                     <p><strong>Akurasi:</strong> {{ '{:.2f}'.format(confidence * 100) }}%</p>
                 </div>
                 {% endif %}
